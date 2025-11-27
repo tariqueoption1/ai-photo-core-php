@@ -18,19 +18,18 @@ require_once __DIR__ . '/vendor/autoload.php';
          font-weight: normal;
          font-style: normal;
          }
-   .ai-photo-container {
-   display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        background: url('public/bg/user-bg.png') no-repeat center center;
-        background-size: cover;
-        border-radius: 13px;
-        min-height: 500px; /* Existing minimum height */
-        margin: 0 auto;
-        position: relative;
-        transition: min-height 0.3s ease; /* Smooth height change */
-   }
+    .ai-photo-container {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         overflow: hidden;
+         background: url('public/bg/user-bg.png') no-repeat center center;
+         border-radius: 13px;
+         min-height: 780px; /* Existing minimum height */
+         margin: 0 auto;
+         position: relative;
+         transition: min-height 0.3s ease; /* Smooth height change */
+         }
    .content {
    position: relative;
    z-index: 1;

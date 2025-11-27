@@ -115,15 +115,15 @@
          .prompt-container {
          text-align: center;
          }
+          .action_image {
+         gap:40px !important;
+         }
          @media (min-width: 992px) {
          .pb-lg-3, .py-lg-3 {
          padding-bottom: 4rem !important;
          }
          }
          @media (max-width: 1024px) {
-         .action_image {
-         gap:40px !important;
-         }
          .pb-lg-3, .py-lg-3 {
          padding-bottom: 0rem !important;
          }
@@ -336,7 +336,7 @@
                      <div class="carousel-inner">
                         <?php
                            $styles = ['Pearl Diver', 'Bedouin Elder', 'Astronaut', 'Futuristic Emirati Citizen', 'Traditional Emirati Warrior', 'AI Falcon Trainer'];
-                           $chunks = array_chunk($styles, 6);
+                           $chunks = array_chunk($styles, 3, true);
                            $active = 'active';
                            foreach ($chunks as $chunk):
                            ?>
@@ -401,7 +401,7 @@
                                'Traditional Emirati Warrior' => 'فارس إماراتي أصيل ',
                                'AI Falcon Trainer' => 'مدرب صقور بالذكاء الاصطناعي'
                            ];
-                           $chunks = array_chunk($styles, 6, true);
+                           $chunks = array_chunk($styles, 3, true);
                            $active = 'active';
                            foreach ($chunks as $chunk): 
                            ?>
