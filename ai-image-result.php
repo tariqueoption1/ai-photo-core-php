@@ -31,9 +31,8 @@
         align-items: center;
         overflow: hidden;
         background: url('public/bg/user-bg.png') no-repeat center center;
-        background-size: cover;
         border-radius: 13px;
-        min-height: 500px; /* Existing minimum height */
+        min-height: 780px; /* Existing minimum height */
         margin: 0 auto;
         position: relative;
         transition: min-height 0.3s ease; /* Smooth height change */
