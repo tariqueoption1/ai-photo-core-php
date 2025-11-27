@@ -33,17 +33,10 @@
          display: flex;
          justify-content: center;
          align-items: center;
-         overflow: hidden;
          background: url('public/bg/user-bg.png') no-repeat center center;
-         border-radius: 13px;
          min-height: 780px; /* Existing minimum height */
          margin: 0 auto;
-         position: relative;
-         transition: min-height 0.3s ease; /* Smooth height change */
-         }
-         .container {
-         position: relative;
-         padding-bottom: 100px;
+         width: 1440px;
          }
          .main-panel {
          padding: 20px;
@@ -75,6 +68,8 @@
          }
          .card-title {
          color: white !important;
+         text-align: center;
+         font-size: 35px;
          }
          .img-sm {
          border-radius: 13px;
@@ -88,10 +83,6 @@
          border-color: #fff;
          color: #ffff;
          font-weight: bold;
-         }
-         .element {
-         max-width: fit-content;
-         margin: 0 auto;
          }
          .back-btn {
          color: #8b8b8b;
@@ -289,32 +280,12 @@
          font-family: "Adib-Bliss-Light";
          }
          <?php endif; ?>
-         .bottom_space {height:600px}
-         .ic1on{
-         margin-bottom:590px;
-         }
-         @media screen and (max-width: 1600px) {
-         .bottom_space {height:380px}
-         }
-         @media screen and (max-width: 1440px) {
-         .bottom_space {height:380px}
-         }
-         @media screen and (max-width: 900px) {
-         .bottom_space {height:380px}
-         }
-         @media screen and (max-width: 700px) {
-         .bottom_space {height:250px}
-         }
-         @media screen and (max-width: 400px) {
-         .bottom_space {height:250px}
-         }
       </style>
    </head>
    <body>
-      <div class="container m-0 p-0" >
+      <div class="container" >
          <!-- English Language Section -->
          <?php if($_SESSION['language'] == 'en'): ?>
-         <div style="border:0px solid #f00;padding:20px;margin-left:auto;margin-right:auto;">
             <div class="ai-photo-container" id="aiPhotoContainer">
                <div id="loader" class="element" style="display:none">
                   <div class="loader-container">
@@ -323,54 +294,42 @@
                            <img src="public/loader/adib-loader.gif" style="max-width: 60px; height: auto; display: block; margin: 0 auto;" />
                         </div>
                      </div>
-                     <div class="loader-text" style="margin-top: 80px; text-align: center; color: white; font-family:Adib-Bliss-Light;  font-size: 20px; font-weight: bold; line-height: 20px; letter-spacing: 0.15px;">
+                     <div class="loader-text" style="margin-top: 80px; text-align: center; color: white; font-family:BlissPro;  font-size: 20px; font-weight: bold; line-height: 20px; letter-spacing: 0.15px;">
                         Image generation may take 25-30 seconds..
                      </div>
                   </div>
                </div>
-               <div class="row card-border">
-                  <div class="element">
-                     <h4 class="card-title">Please Select Any One Prompt</h4>
-                  </div>
                   <div id="carouselExampleIndicators_desktop" class="carousel slide" data-bs-ride="carousel">
-                     <div class="carousel-inner">
+                     <h4 class="card-title" style="font-family: BlissPro;" >Please Select Any One Prompt</h4>
                         <?php
                            $styles = ['Pearl Diver', 'Bedouin Elder', 'Astronaut', 'Futuristic Emirati Citizen', 'Traditional Emirati Warrior', 'AI Falcon Trainer'];
                            $chunks = array_chunk($styles, 3, true);
                            $active = 'active';
                            foreach ($chunks as $chunk):
                            ?>
-                        <div class="carousel-item <?= $active ?>">
-                           <div class="prompt-container">
-                              <ul style="display:flex; flex-wrap: wrap; justify-content: center;" class="action_image">
+                        <div class="<?= $active ?>">
+                              <ul style="display:flex; flex-wrap: wrap; justify-content: center;margin-left: -39px; font-family: BlissPro; " class="action_image">
                                  <?php foreach ($chunk as $style): ?>
-                                 <li class="col-lg-4 col-md-6 col-12">
-                                    <div class="padding-style">
+                                 <li>
                                        <form method="post" action="generate.php">
                                           <div class="form-group">
                                              <input type="hidden" name="user_image" value="<?php echo $_SESSION['orginalPath']; ?>">
                                              <input type="hidden" name="prompt" value="<?php echo $style; ?>" class="prompt">
                                              <input type="hidden" name="language" value="<?php echo $_SESSION['language']; ?>">
-                                             <input type="submit" class="img-sm" name="submit" value="<?php echo $style; ?>" onclick="loader_image()" />
+                                             <input style="font-family: BlissPro;" type="submit" class="img-sm" name="submit" value="<?php echo $style; ?>" onclick="loader_image()" />
                                           </div>
                                        </form>
-                                    </div>
                                  </li>
                                  <?php endforeach; ?>
                               </ul>
-                           </div>
                         </div>
                         <?php $active = ''; ?>
                         <?php endforeach; ?>
-                     </div>
                   </div>
-               </div>
             </div>
-         </div>
          <?php endif; ?>
          <!-- Arabic Language Section -->
          <?php if($_SESSION['language'] == 'ar'): ?>
-         <div style="border:0px solid #f00;padding:20px;margin-left:auto;margin-right:auto;">
             <div class="ai-photo-container" id="aiPhotoContainer">
                <!-- ----  -->
                <div id="loader" class="element" style="display:none">
@@ -386,11 +345,8 @@
                   </div>
                </div>
                <!-- ---- -->
-               <div class="row card-border">
-                  <div class="element">
-                     <h4 class="card-title">الرجاء الاختيار</h4>
-                  </div>
                   <div id="carouselExampleIndicators_desktop" class="carousel slide" data-bs-ride="carousel">
+                     <h4 class="card-title" style="font-family: Adib-GSS-Medium;">الرجاء الاختيار</h4>
                      <div class="carousel-inner">
                         <?php
                            $styles = [
@@ -409,17 +365,15 @@
                            <div class="prompt-container">
                               <ul style="display:flex; flex-wrap: wrap; justify-content: center;" class="action_image">
                                  <?php foreach ($chunk as $style_en => $style_ar): ?>
-                                 <li class="col-lg-4 col-md-6 col-12 pb-lg-3">
-                                    <div class="padding-style">
+                                 <li>
                                        <form method="post" id="frm_loader_form" name="frm_loader_form" action="generate.php">
                                           <div class="form-group">
                                              <input type="hidden" name="user_image" value="<?php echo $_SESSION['orginalPath']; ?>">
                                              <input type="hidden" name="prompt" value="<?php echo $style_en; ?>" class="prompt">
                                              <input type="hidden" name="language" value="<?php echo $_SESSION['language']; ?>">
-                                             <input type="submit" class="img-sm" name="submit" value="<?php echo $style_ar; ?>" onclick="return loader_image()" />
+                                             <input style="font-family: BlissPro;" type="submit" class="img-sm" name="submit" value="<?php echo $style_ar; ?>" onclick="return loader_image()" />
                                           </div>
                                        </form>
-                                    </div>
                                  </li>
                                  <?php endforeach; ?>
                               </ul>
@@ -429,12 +383,9 @@
                         <?php endforeach; ?>
                      </div>
                   </div>
-               </div>
             </div>
-         </div>
          <?php endif; ?>
       </div>
-      <div class="bottom_space" ></div>
    </body>
 </html>
 <script>
@@ -446,25 +397,9 @@
        const frm_loader_form_c = document.getElementById("frm_loader_form");
        const language = "<?php echo $_SESSION['language']; ?>";
        if (prompts.length > 0 && prompts[0].value.trim() !== "") {
-           // loader.innerHTML = `
-           //     <div class="loader-container">
-           //         <div class="loader">
-           //             <div></div>
-           //             <div></div>
-           //             <div></div>
-           //         </div>
-           //     </div>
-           //     <div class="loader-text" style="margin-top: 10px; text-align: center; color: white; font-size: 20px; font-weight: bold; line-height: 20px; letter-spacing: 0.15px;">
-           //         ${loadingText}
-           //     </div>`;
-           //setTimeout(() => {
-               // alert("set time");
                loader.style.display = 'block'; // Show the loader
                document.querySelector('.card-border').style.visibility = 'hidden';
                aiPhotoContainer.classList.add('loader-active');
-               //document.frm_loader_form.submit();
-             //   document.forms['frm_loader_form'].submit();
-           //}, 1000); // Add a slight delay
            return true;
        }
    }
