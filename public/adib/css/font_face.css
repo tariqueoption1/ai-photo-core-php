@@ -1,0 +1,45 @@
+@font-face {
+    font-family: Adib-BlissPro-Bold;
+    /* src: url('fonts/BlissPro-Regular.otf'); */
+    src: url('fonts/BlissPro-Bold.otf');
+  }
+  @font-face {
+    font-family: Adib-Bliss-Light;
+    src: url('fonts/BLISS-LIGHT.OTF');
+  }
+  @font-face {
+    font-family: Adib-BlissPro-Light;
+    src: url('fonts/BlissPro-Light.otf');
+  }
+  @font-face {
+    font-family: Adib-BlissPro-Regulart;
+    src: url('fonts/BlissPro-Regular.otf');
+  }
+  @font-face {
+    font-family: Adib-BlissPro-Medium;
+    src: url('fonts/BlissPro-Medium.otf');
+  }
+  @font-face {
+      font-family: Dubai-Bold;
+      src: url('fonts/BlissPro-Bold.otf');
+    }
+    @font-face {
+      font-family: Dubai-Medium;
+      src: url('fonts/BlissPro-Medium.otf');
+    }
+    @font-face {
+      font-family: Dubai-Light;
+      src: url('fonts/BlissPro-Light.otf');
+    }
+    @font-face {
+      font-family: GessTwo-Bold;
+      src: url('fonts/GESSTwo-Bold.otf');
+    }
+    @font-face {
+      font-family: GessTwo-Light;
+      src: url('fonts/GESSTwo-Light.otf');
+    }
+    @font-face {
+      font-family: GessTwo-Medium;
+      src: url('fonts/GESSTwo-Medium.otf');
+    }
